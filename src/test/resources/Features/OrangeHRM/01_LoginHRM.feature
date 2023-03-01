@@ -4,6 +4,7 @@ Feature: OrangeHRM - Login
     Given Cargar Pagina OrangeHRM "<url>"
     When Captura Username "<Username>"
     And Captura Password "<Password>"
+    And Dar Click Boton Login
     Then Muestra Nombre de Usuario "<Name>" - Home OrangeHRM
 
     Examples: 

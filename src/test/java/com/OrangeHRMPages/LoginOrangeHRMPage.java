@@ -3,19 +3,36 @@ package com.OrangeHRMPages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginOrangeHRMPage {
-	
-	
+import com.CommoMethods.CommonMethods;
+
+public class LoginOrangeHRMPage extends CommonMethods {
+
 	// Input Username
-	@FindBy(css = "#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div:nth-child(2) > div > div:nth-child(2) > input")
+	@FindBy(xpath = "//input[@name='username']")
 	WebElement input_Username;
 	// Input Password
-	@FindBy(css = "#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div:nth-child(3) > div > div:nth-child(2) > input")
+	@FindBy(xpath = "//input[@name='password']")
 	WebElement input_Password;
 	// Btn Login
-	@FindBy(css = "#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div.oxd-form-actions.orangehrm-login-action > button")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement btn_Login;
-	
-	
+
+	public void capturaUsername(String username) {
+
+		sendKeysElement(input_Username, username);
+
+	}// end capturaUsername
+
+	public void capturaPassword(String password) {
+
+		sendKeysElement(input_Password, password);
+
+	}// end capturaPassword
+
+	public void clickBtnLogin() {
+
+		clickElement(btn_Login);
+
+	}// end clickBtnLogin
 
 }// end LoginOrangeHRMPage
